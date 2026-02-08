@@ -1,0 +1,18 @@
+# Tools artifact URL (download from contest page and set here)
+tools_zip_url = "https://example.com/tools.zip"
+
+# Directory configuration
+input_dir = "./tools/in"
+output_dir = "./tools/out"
+visualizer_dir = "./tools"
+html_output = "./results"
+
+# Tester binary configuration (runs test cases)
+[tester]
+command = "cargo run --release --bin tester --manifest-path {{script}}/Cargo.toml"
+script = "./tools"
+
+# Solver configuration (optional, if needed elsewhere)
+[solver]
+command = "cargo run --release --manifest-path {{script}}/Cargo.toml"
+script = "./solver"

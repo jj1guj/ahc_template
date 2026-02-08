@@ -1,0 +1,22 @@
+# Build artifacts
+target/
+/target
+Cargo.lock
+
+# Config (contains local URLs)
+config/config.toml
+!config/config.toml.example
+
+# Tools and results (from contest and outputs)
+/tools/
+/results/
+*.html
+
+# IDEs
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+*.zip
