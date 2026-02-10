@@ -2,17 +2,17 @@
 tools_zip_url = "https://example.com/tools.zip"
 
 # Directory configuration
+[paths]
 input_dir = "./tools/in"
 output_dir = "./tools/out"
-visualizer_dir = "./tools"
-html_output = "./results"
+visualizer_dir = "./results/visualizations"
+html_output = "./results/index.html"
 
 # Tester binary configuration (runs test cases)
+# tester runs the solver internally: tester <solver_command> < input_file
 [tester]
-command = "cargo run --release --bin tester --manifest-path {{script}}/Cargo.toml"
-script = "./tools"
+command = "./target/release/tester ./target/release/solver"
 
 # Solver configuration (optional, if needed elsewhere)
 [solver]
-command = "cargo run --release --manifest-path {{script}}/Cargo.toml"
-script = "./solver"
+command = "./target/release/solver"
