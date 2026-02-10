@@ -3,6 +3,7 @@
         "rust-lang.rust-analyzer",
         "golang.go",
         "llvm-vs-code-extensions.vscode-clangd",
-        "tamasfe.even-better-toml"
+        "tamasfe.even-better-toml",
+        "actboy168.tasks"
     ]
 }
