@@ -6,7 +6,7 @@ cd "$SCRIPT_DIR/.." || exit 1
 
 echo "=== Setting up contest template ==="
 
-# Initialize submodules (score_visualizer)
+# Initialize submodules (ahc_score_visualizer)
 echo "[INFO] Initializing git submodules..."
 git submodule update --init --recursive
 
