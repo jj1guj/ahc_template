@@ -8,15 +8,8 @@ echo "=== Preparing tools ==="
 
 # Check if config exists
 if [ ! -f "config/config.toml" ]; then
-    if [ -f "config/config.toml.example" ]; then
-        echo "[INFO] config/config.toml not found. Copying from example..."
-        cp config/config.toml.example config/config.toml
-        echo "[ERROR] Please edit config/config.toml with your tools.zip URL and run the script again."
-        exit 1
-    else
-        echo "[ERROR] config/config.toml not found" >&2
-        exit 1
-    fi
+    echo "[ERROR] config/config.toml not found. Please create it with your tools.zip URL." >&2
+    exit 1
 fi
 
 # Read tools_zip_url from config using grep

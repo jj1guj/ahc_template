@@ -10,8 +10,8 @@ Template repository for AtCoder Heuristic Contest with integrated score visualiz
 ├── .github/workflows/    # GitHub Actions (score.yml)
 ├── solver/               # Your solver code (Rust/Go/C++)
 ├── config/
-│   └── config.toml.example
-├── tools/                # Downloaded from contest (git-ignored)
+│   └── config.toml
+├── tools/                # Downloaded from contest (git-ignored, via prepare_tools.sh)
 ├── results/              # Visualization output
 ├── scripts/
 │   ├── setup.sh         # Initial setup (clone score_visualizer, prepare tools)
@@ -40,14 +40,14 @@ git submodule update --init
    ```
    This will:
    - Clone score_visualizer (if submodule not yet present)
-   - Copy `config/config.toml.example` to `config/config.toml`
-   - Prompt you to edit config with your tools.zip URL
+   - Prompt you to edit `config/config.toml` with your tools.zip URL
 
 3. **Edit configuration:**
    ```bash
    # config/config.toml
    tools_zip_url = "https://your-contest-url/tools.zip"
    ```
+   ⚠️ `config/config.toml` is tracked by Git. Make sure to commit and push it so that CI can use the same configuration.
 
 4. **Add your solver code** to `solver/` (Rust/Go/C++)
 
@@ -66,12 +66,9 @@ bash scripts/run_score.sh
 
 ### GitHub Actions (PR Trigger)
 
-1. **Create a GitHub Secret:**
-   - Go to Settings → Secrets and variables → Actions
-   - Add `TOOLS_ZIP_URL` with your contest tools.zip link
-
-2. **Push to PR:**
+1. **Push to PR:**
    - The workflow automatically runs on PR creation/update
+   - Tools are downloaded using the `tools_zip_url` in `config/config.toml` (must be committed and pushed beforehand)
    - Results appear as artifacts
    - Score comment is posted to the PR
 

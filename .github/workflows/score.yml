@@ -20,18 +20,6 @@ jobs:
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
 
-      - name: Install Go (if needed)
-        uses: actions/setup-go@v4
-        with:
-          go-version: '1.21'
-
-      - name: Setup config from template
-        run: |
-          cp config/config.toml.example config/config.toml
-          sed -i 's|https://example.com/tools.zip|${{ secrets.TOOLS_ZIP_URL }}|' config/config.toml
-        env:
-          TOOLS_ZIP_URL: ${{ secrets.TOOLS_ZIP_URL }}
-
       - name: Download and prepare tools
         run: bash scripts/prepare_tools.sh
 
@@ -39,7 +27,7 @@ jobs:
         run: bash scripts/run_score.sh
 
       - name: Upload results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: contest-results
