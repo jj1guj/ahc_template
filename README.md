@@ -18,6 +18,7 @@ Template repository for AtCoder Heuristic Contest with integrated score visualiz
 │   ├── prepare_tools.sh # Download and extract tools.zip
 │   └── run_score.sh     # Run visualizer (local testing)
 └── score_visualizer/     # Git submodule pointing to tool repo
+```
 
 ⚠️ **Submodule must be initialized before running:**
 ```bash
@@ -104,4 +105,3 @@ script = "./tools"
 
 - [score_visualizer repo](https://github.com/yourname/ahc-score-visualizer)
 - [Supported external crates (cargo-compete)](https://github.com/taiki-e/cargo-compete)
-
