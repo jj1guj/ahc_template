@@ -7,6 +7,7 @@ input_dir = "./tools/in"
 output_dir = "./tools/out"
 visualizer_dir = "./results/visualizations"
 html_output = "./results/index.html"
+answers_dir = "./results/answers"
 
 # Tester binary configuration (runs test cases)
 # tester runs the solver internally: tester <solver_command> < input_file
