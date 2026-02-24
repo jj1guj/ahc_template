@@ -27,7 +27,7 @@ fi
 echo "[INFO] Building solver..."
 cargo build --release --manifest-path solver/Cargo.toml
 
-echo "[INFO] Building tools (tester/vis)..."
+echo "[INFO] Building tools..."
 cargo build --release --manifest-path tools/Cargo.toml
 
 echo "[INFO] Building ahc_score_visualizer..."
