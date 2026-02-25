@@ -15,3 +15,5 @@ Cargo.lock
 # OS
 .DS_Store
 *.zip
+
+.venv/
