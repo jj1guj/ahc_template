@@ -3,7 +3,7 @@ tools_zip_url = "https://example.com/tools.zip"
 
 # Directory configuration
 [paths]
-input_dir = "./tools/inA"
+input_dir = "./tools/in"
 output_dir = "./tools/out"
 visualizer_dir = "./results/visualizations"
 html_output = "./results/index.html"
@@ -12,7 +12,7 @@ answers_dir = "./results/answers"
 # Tester binary configuration (runs test cases)
 # tester runs the solver internally: tester <solver_command> < input_file
 [tester]
-command = "python /home/jj1guj/atcoder/ahc_template/test.py"
+command = "cargo run -r --manifest-path=./solver/Cargo.toml"
 
 [scorer]
 # Optional: Use a separate scoring command instead of parsing score from solver's stderr.
